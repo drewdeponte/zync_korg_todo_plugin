@@ -1,0 +1,54 @@
+What is this?
+-------------
+This is the KOrganizer Todo Synchronization Plugin for the ZaurusSyncer
+application. It allows the ZaurusSyncer application to synchronize with
+KOrganizer's Todo list.
+
+Building the KOrganizer To-Do Plugin
+------------------------------------
+Simply run make at the root of the KOrganizer To-Do Plugins directory tree.
+
+$ make
+
+Installing the KOrganizer To-Do Plugin
+--------------------------------------
+Simply run make install as root at the root of the KOrganizer To-Do Plugins
+directory tree.
+
+# make install
+
+Configuration
+-------------
+The configuration for this plugin should exist in a Config file which should
+exist in ones home directory. The Config file should be named
+.KOrgTodoPlugin.conf. The Config file can contain any of the following entries:
+
+korg_cal_path=<path to KOrganizer calender file to synchronize with>
+korg_conf_path=<path to KOrganizer config file>
+
+There should NOT be any spaces between the equals sign and the path or the
+item title. The default path for the standard KOrganizer calendar is as
+follows:
+
+<user home directory>/.kde/share/apps/korganizer/std.ics
+
+The default path for the KOrganizer config file is as follows:
+
+<user home directory>/.kde/share/config/korganizerrc
+
+Note: This plugin does not interpret the ~ as the current users home
+directory. You must provide the full path name.
+
+An example configuration file has been provided within this directory called
+example.KOrgTodoPlugin.conf. One could use the example Config by doing the
+following:
+
+> cp example.KOrgTodoPlugin.conf ~/.KOrgTodoPlugin.conf
+
+Open ~/.KOrgTodoPlugin.conf in your favorite text editor and replace the
+<user-home-dir> with their actual home directory.
+
+Performing the above operations will configure the plugin to use the standard
+KOrganizer calendar file and standard KOrganizer config. If you would like to
+synchronize with a different KOrganizer calendar file please change the value
+of the korg_cal_path item in the Config file.

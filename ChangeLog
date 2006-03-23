@@ -1,0 +1,44 @@
+2005-02-12 Andrew De Ponte <cyphactor@socal.rr.com>
+
+	* Removed the ConfigManagerType class from the source as well as
+	its DebugControl header since they are now provided by the confmgr
+	library included with zync. This makes the plugin only consist of
+	two source files now and makes it quite a bit cleaner.
+
+--- 1.0.2 Released
+
+2005-02-07 Andrew De Ponte <cyphactor@socal.rr.com>
+
+	* Changed the PLUGIN_VERSION define to TODO_PLUGIN_VERSION so it
+	won't duplicated defines when loading multiple plugins.
+
+	* Went through and made the code base a little more robust.
+	
+	* Implemented Single Action Full Sync.
+	
+	* Fixed a problem with the plugin detecting deletions.
+	
+	* Switched the KOrganizer interface code to now use the
+	CalendarLocal class rather than the CalendarResource class. Since
+	the .KOrgTodoPlugin.conf file was going to end up being required
+	for people that are not running KDE. Beyond that, this method
+	works for both people running KDE as well as those who are not.
+
+2005-01-25 Andrew De Ponte <cyphactor@socal.rr.com>
+
+	* Switched the KOrganizer interface code to now use the
+	CalendarResources class rather than the CalendarLocal class. This
+	eliminates the need for the .KOrgTodoPlugin.conf file as well as
+	fixes the segfault problems that were occuring in single action
+	Full Sync before.
+
+2005-01-24 Andrew De Ponte <cyphactor@socal.rr.com>
+	
+	* Added robustness so that it no longer crashes when reading a
+	malformed .KOrgTodoPlugin.log file. It now also handles all
+	deleted items which it detected even if there was an error in
+	reading from the .KOrgTodoPlugin.log. The items that are not able
+	to be read from the .KOrgTodoPlugin.log are not checked to see if
+	they have been deleted.
+	
+--- 1.0.1 Released
